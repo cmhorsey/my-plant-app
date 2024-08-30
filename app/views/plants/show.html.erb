@@ -1,2 +1,9 @@
 <h1><%= @plant.name %></h1>
 <h2><%= @plant.scientific_name %></h2>
+
+Planted in:
+<ul>
+  <% @plant.gardens.each do |garden| %>
+     <li> <%= garden.name %> </li>
+    <% end %>
+</ul>
