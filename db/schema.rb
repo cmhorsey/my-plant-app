@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_30_143409) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_30_152403) do
+  create_table "gardens", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "plants", force: :cascade do |t|
     t.string "name"
     t.string "scientific_name"
