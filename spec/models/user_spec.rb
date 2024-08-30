@@ -9,8 +9,8 @@ RSpec.describe User do
 
   it 'can have many gardens' do
     gardendoodle = User.create(username: 'gardendoodle')
-    Garden.create(name: 'vegetable garden', user: gardendoodle)
-    Garden.create(name: 'herb garden', user: gardendoodle)
+    gardendoodle.gardens.create(name: 'vegetable garden')
+    gardendoodle.gardens.create(name: 'herb garden')
 
     expect(gardendoodle.gardens.count).to eq(2)
   end
