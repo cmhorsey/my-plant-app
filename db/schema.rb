@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_29_225031) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_30_154826) do
+  create_table "garden_plants", force: :cascade do |t|
+    t.integer "garden_id", null: false
+    t.integer "plant_id", null: false
+    t.date "plant_date"
+    t.integer "quantity"
+    t.date "last_watered"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_garden_plants_on_garden_id"
+    t.index ["plant_id"], name: "index_garden_plants_on_plant_id"
+  end
+
+  create_table "gardens", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.string "scientific_name"
+    t.string "plant_type"
+    t.boolean "edible"
+    t.boolean "pet_safe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -19,8 +49,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_29_225031) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.integer "garden_id"
+    t.integer "plant_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "garden_plants", "gardens"
+  add_foreign_key "garden_plants", "plants"
 end
