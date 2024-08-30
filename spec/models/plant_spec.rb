@@ -14,6 +14,4 @@ RSpec.describe Plant do
   it { is_expected.to have_attributes(plant_type: 'House Plant') }
   it { is_expected.to have_attributes(edible: false) }
   it { is_expected.to have_attributes(pet_safe: true) }
-
-
 end
