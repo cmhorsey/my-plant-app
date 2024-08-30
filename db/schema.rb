@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_30_152403) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_30_154229) do
+  create_table "garden_plants", force: :cascade do |t|
+    t.integer "garden_id", null: false
+    t.integer "plant_id", null: false
+    t.date "plant_date"
+    t.integer "quantity"
+    t.date "last_watered"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_garden_plants_on_garden_id"
+    t.index ["plant_id"], name: "index_garden_plants_on_plant_id"
+  end
+
   create_table "gardens", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -42,4 +54,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_30_152403) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "garden_plants", "gardens"
+  add_foreign_key "garden_plants", "plants"
 end

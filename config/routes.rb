@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :garden_plants
   resources :gardens
   resources :plants
   devise_for :users
