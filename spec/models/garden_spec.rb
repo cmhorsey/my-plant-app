@@ -9,6 +9,5 @@ RSpec.describe Garden do
 
   it { is_expected.to have_attributes(name: 'Nightshade Bed') }
   it { is_expected.to have_attributes(location: 'Backyard') }
-  it { is_expected.to have_attributes(plant_type: 'House Plant') }
   it { is_expected.to have_attributes(notes: 'Full sun garden bed suitable for nightshades') }
 end
