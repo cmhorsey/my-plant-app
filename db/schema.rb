@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_30_154826) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_30_182538) do
   create_table "garden_plants", force: :cascade do |t|
     t.integer "garden_id", null: false
     t.integer "plant_id", null: false
@@ -29,6 +29,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_30_154826) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_gardens_on_user_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -39,6 +41,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_30_154826) do
     t.boolean "pet_safe"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_plants_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +62,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_30_154826) do
 
   add_foreign_key "garden_plants", "gardens"
   add_foreign_key "garden_plants", "plants"
+  add_foreign_key "gardens", "users"
+  add_foreign_key "plants", "users"
 end
