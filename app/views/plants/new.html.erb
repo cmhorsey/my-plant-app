@@ -1,0 +1,14 @@
+ Tell us about the plant you brought home!
+ <%= form_for(@plant) do |f| %>
+
+    <label>Plant Name: <%= f.text_field :name %></label><br />
+
+    <label>Scientific Name: <%= f.text_field :scientific_name %></label><br />
+
+    <label>Edible?: <%= f.check_box :edible %></label><br />
+
+    <label>Pet Safe?: <%= f.check_box :pet_safe %></label><br />
+
+    <%= f.submit %>
+
+  <% end %>
