@@ -7,23 +7,23 @@ class GardensController < ApplicationController
     @garden = Garden.find(params[:id])
   end
 
-  # def new
-  #   @garden = Garden.new
-  # end
+  def new
+    @garden = Garden.new
+  end
 
-  # def create
-  #   @garden = Garden.new(garden_params)
+  def create
+    @garden = Garden.new(garden_params)
 
-  #   if @garden.save
-  #     redirect_to garden_path, notice: "Plant was successfully created."
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
+    if @garden.save
+      redirect_to gardens_path, notice: "garden was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
 private
 
-  def plant_params
-    params.require(:plant).permit(:name, :scientific_name, :edible, :pet_safe)
+  def garden_params
+    params.require(:garden).permit(:name, :location, :notes, :user_id)
   end
 end
