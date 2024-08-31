@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :gardens
-  has_many :plants
+  has_many :plants, through: :gardens
 end
