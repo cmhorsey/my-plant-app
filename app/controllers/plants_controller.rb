@@ -11,23 +11,13 @@ class PlantsController < ApplicationController
     @plant = Plant.new
   end
 
-  # def create
-  #   @plant = Plant.new(plant_params)
-
-  #   if @plant.save
-  #     redirect_to plants_path
-  #   else
-  #     render :new
-  #   end
-  # end
-
   def create
     @plant = Plant.new(plant_params)
 
     if @plant.save
-      redirect_to plants_path, notice: "Plant was successfully created." # Redirects upon success
+      redirect_to plants_path, notice: "Plant was successfully created."
     else
-      render :new, status: :unprocessable_entity # Re-renders form with 422 status
+      render :new, status: :unprocessable_entity
     end
   end
 
