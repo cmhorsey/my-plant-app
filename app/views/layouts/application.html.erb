@@ -16,7 +16,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if user_signed_in? %>
-      <%= current_user.email %>
+      <p>Hello, <%=  current_user.username  %>!</p>
+      <br />
+      <br />
       <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 
       <%= link_to 'Account Settings', edit_user_registration_path %>
@@ -24,6 +26,10 @@
       <%= link_to 'Login', new_user_session_path %>
       <%= link_to 'SignUp', new_user_registration_path %>
     <% end %>
+    <br />
+    <br />
     <%= yield %>
+    <%= link_to 'Go Home', homepage_path %>
+    <%= link_to 'My Profile', dashboard_path %>
   </body>
 </html>
