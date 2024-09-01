@@ -1,4 +1,4 @@
-<h1>User Profile</h1>
+<h1><%= current_user.username %>'s Profile</h1>
 
 
 My Gardens:
@@ -7,7 +7,11 @@ My Gardens:
   <li> <%= link_to garden.name, garden %> </li>
 <% end %>
 </ul>
+<%= link_to 'Till a new garden', new_garden_path %>
 <br />
+<br />
+<br />
+
 
 My Plants:
 <ul>
@@ -15,5 +19,11 @@ My Plants:
   <li> <%= link_to plant.name, plant %> </li>
 <% end %>
 </ul>
+<%= link_to 'Add a plant', new_plant_path %>
+<br />
+<br />
+<%= link_to 'Add a plant to a garden', new_garden_plant_path %>
+
+<br />
 <br />
 <br />
