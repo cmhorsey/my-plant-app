@@ -1,4 +1,5 @@
 class GardensController < ApplicationController
+  before_action :authenticate_user!
   def index
     @gardens = current_user.gardens
   end

@@ -2,6 +2,6 @@
 
 <ul>
   <% @gardens.each do |garden| %>
-    <li><%= link_to garden.name, garden %></li>
+    <li><%= link_to garden.name, user_garden_path(garden.user, garden) %></li>
   <% end %>
 </ul>
