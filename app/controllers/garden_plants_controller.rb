@@ -1,7 +1,7 @@
 class GardenPlantsController < ApplicationController
   def new
     @garden_plant = GardenPlant.new
-    @gardens = Garden.all
+    @gardens = current_user.gardens
     @plants = Plant.all
   end
 

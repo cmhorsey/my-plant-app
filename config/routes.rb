@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   root 'home#homepage'
   get 'homepage', to: 'home#homepage'
   get 'dashboard', to: 'home#dashboard'
+
+  resources :users do
+    resources :gardens do
+      resources :plants, only: [:index, :show]
+    end
+  end
 end
