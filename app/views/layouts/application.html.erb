@@ -10,6 +10,7 @@
     <%= javascript_importmap_tags %>
 
     <%= javascript_include_tag "rails-ujs" %>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -30,7 +31,9 @@
     <% end %>
     <br />
     <br />
-    <%= yield %>
+      <div class="center-content">
+        <%= yield %>
+      </div>
     <%= link_to 'Go Home', homepage_path %>
   </body>
 </html>
