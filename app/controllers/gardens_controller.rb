@@ -1,6 +1,6 @@
 class GardensController < ApplicationController
   def index
-    @gardens = Garden.all
+    @gardens = current_user.gardens
   end
 
   def show
