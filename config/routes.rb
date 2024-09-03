@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :garden_plants
-  resources :gardens
-  resources :plants
-  # devise_for :users
+  resources :garden_plants, only: [:new, :create]
+  resources :gardens, only: [:show]
+  # resources :plants
   devise_for :users, controllers: {
   registrations: 'users/registrations'
 }
