@@ -16,6 +16,9 @@
 
   <label>Scientific Name: <%= f.text_field :scientific_name %></label><br />
 
+  <label>Plant Type:</label><br />
+  <%= f.select :plant_type, options_for_select(['Herb', 'Flower', 'Tree', 'Vegetable', 'House Plant']), prompt: 'Select a plant type' %>
+  <br />
   <label>Edible?: <%= f.check_box :edible %></label><br />
 
   <label>Pet Safe?: <%= f.check_box :pet_safe %></label><br />
