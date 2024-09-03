@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :garden_plants, only: [:new, :create]
   resources :gardens, only: [:show]
-  # resources :plants
   devise_for :users, controllers: {
   registrations: 'users/registrations'
 }
@@ -13,7 +12,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   root 'home#homepage'
   get 'homepage', to: 'home#homepage'
-  get 'dashboard', to: 'home#dashboard'
 
   resources :users do
     resources :gardens do

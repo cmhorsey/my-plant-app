@@ -3,6 +3,6 @@
 Plants you'll find:
 <ul>
   <% @garden.plants.each do |plant| %>
-     <li> <%= plant.name %> </li>
-    <% end %>
+    <li> <%= link_to plant.name, user_garden_plant_path(user_id: @garden.user_id, garden_id: @garden.id, id: plant.id) %> </li>
+   <% end %>
 </ul>

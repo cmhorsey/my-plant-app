@@ -1,5 +1,5 @@
 Tell us about the new garden bed!
-<%= form_with model: @garden, local: true do |f| %>
+<%= form_with model: [current_user, @garden], local: true do |f| %>
 
   <% if @garden.errors.any? %>
     <div id="error_explanation">

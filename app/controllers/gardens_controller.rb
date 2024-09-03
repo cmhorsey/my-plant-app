@@ -15,7 +15,7 @@ class GardensController < ApplicationController
     @garden = Garden.new(garden_params)
 
     if @garden.save
-      redirect_to gardens_path, notice: "garden was successfully created."
+      redirect_to user_gardens_path, notice: "garden was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
