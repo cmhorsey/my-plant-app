@@ -11,7 +11,7 @@ class GardenPlantsController < ApplicationController
     @plants = Plant.all
 
     if @garden_plant.save
-      redirect_to gardens_path, notice: "Successfully planted."
+      redirect_to user_gardens_path(current_user), notice: "Successfully planted."
     else
       render :new, status: :unprocessable_entity
     end
