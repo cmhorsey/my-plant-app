@@ -1,8 +1,10 @@
 <h1><%= @garden.name %></h1>
-
-Plants you'll find here:
+<p> Location: <i><%= @garden.location %></i></p>
+<h3>Plants you'll find here:</h3>
 <ul>
-  <% @garden.plants.each do |plant| %>
-    <li> <%= link_to plant.name, user_garden_plant_path(user_id: @garden.user_id, garden_id: @garden.id, id: plant.id) %> 🌱 Planted on <%= plant.formatted_plant_date %> </li>
+  <% @garden.garden_plants.each do |gardenplant| %>
+    <li><%= gardenplant.quantity %> <%= link_to gardenplant.plant.name, plant_path(gardenplant.plant) %> Planted on: <i> <%= gardenplant.formatted_plant_date %>  </i>
+      <p> Last watered: <%= gardenplant.last_watered %> </p>
+    </li>
    <% end %>
 </ul>

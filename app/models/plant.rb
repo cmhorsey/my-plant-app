@@ -8,8 +8,4 @@ class Plant < ApplicationRecord
 
   scope :edible_plants, -> { where(edible: true) }
   scope :safe_for_pets, -> { where(pet_safe: true) }
-
-  def formatted_plant_date
-    garden_plants.first.created_at.strftime("%B %d, %Y")
-  end
 end

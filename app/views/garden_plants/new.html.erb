@@ -12,11 +12,14 @@
     </div>
   <% end %>
 
-<label>Select Garden:</label>
+  <label>Select Garden:</label>
   <%= f.select :garden_id, options_from_collection_for_select(@gardens, :id, :name), prompt: 'Choose a Garden' %><br />
 
   <label>Select Plant:</label>
   <%= f.select :plant_id, options_from_collection_for_select(@plants, :id, :name), prompt: 'Choose a Plant' %><br />
+
+  <label>Quantity of plant: <%= f.text_field :quantity %></label><br />
+
 
   <%= f.submit "Plant Something!" %>
 
