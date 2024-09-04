@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :garden_plants, only: [:new, :create]
+  resources :garden_plants, only: [:new, :create, :update]
   # resources :gardens, only: [:show]
   resources :plants, only: [:show, :index, :new, :create]
 

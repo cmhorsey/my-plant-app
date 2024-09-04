@@ -5,6 +5,15 @@ class GardenPlantsController < ApplicationController
     @plants = Plant.all
   end
 
+  def update
+    @garden_plant = GardenPlant.find(params[:id])
+    if @garden_plant.update(last_watered: Date.current)
+      redirect_to user_garden_path(@garden_plant.garden), notice: "Plant watered successfully!"
+    else
+      redirect_to user_garden_path(@garden_plant.garden), alert: "Failed to water the plant."
+    end
+  end
+
   def create
     @garden_plant = GardenPlant.new(garden_plant_params)
     @gardens = Garden.all
