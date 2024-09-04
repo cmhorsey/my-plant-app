@@ -16,6 +16,8 @@
 
   <label>Scientific Name: <%= f.text_field :scientific_name %></label><br />
 
+  <label>Plant Description: <%= f.text_area :description %></label><br />
+
   <label>Plant Type:</label><br />
   <%= f.select :plant_type, options_for_select(['Herb', 'Flower', 'Tree', 'Vegetable', 'House Plant']), prompt: 'Select a plant type' %>
   <br />
