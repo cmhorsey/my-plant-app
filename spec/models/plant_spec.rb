@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Plant do
+  describe 'Factory' do
+    it 'is creates a valid Plant' do
+      plant = FactoryBot.build(:plant)
+      expect(plant).to be_valid
+    end
+  end
+
   subject(:snake_plant) { Plant.new(
     name: 'Snake Plant',
     scientific_name: 'Dracaena trifasciata',

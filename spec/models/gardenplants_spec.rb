@@ -1,6 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe GardenPlant do
+RSpec.describe GardenPlant, type: :model do
+  describe 'Factory' do
+    it 'is creates a valid GardenPlant' do
+      gardenplant = FactoryBot.build(:garden_plant)
+      expect(gardenplant).to be_valid
+    end
+  end
+
   subject { GardenPlant.new(
     plant_date: Date.today,
     quantity: 2,
