@@ -12,4 +12,8 @@ class Plant < ApplicationRecord
   def formatted_plant_date
     garden_plants.first.created_at.strftime("%B %d, %Y")
   end
+
+  def plant_quantity
+    garden_plants.first.quantity
+  end
 end
