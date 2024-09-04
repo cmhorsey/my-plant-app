@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :garden do
-    name { "Herb Garden" }
-    location  { "Side Yard" }
-    notes { "some notes" }
+    name { "My Garden" }
+    location { "Backyard" }
+    notes { "This is a note about the garden." }
+    association :user
   end
 end

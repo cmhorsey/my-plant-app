@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Garden do
+  describe 'Factory' do
+    it 'is creates a valid Garden' do
+      garden = FactoryBot.build(:garden)
+      expect(garden).to be_valid
+    end
+  end
+
   subject(:nightshade_bed) { Garden.new(
     name: 'Nightshade Bed',
     location: 'Backyard',

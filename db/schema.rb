@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_04_125704) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_04_193953) do
   create_table "garden_plants", force: :cascade do |t|
     t.integer "garden_id", null: false
     t.integer "plant_id", null: false
-    t.date "plant_date"
     t.integer "quantity"
     t.date "last_watered"
     t.datetime "created_at", null: false
