@@ -1,8 +1,8 @@
 <h1><%= @garden.name %></h1>
 
-Plants you'll find:
+Plants you'll find here:
 <ul>
   <% @garden.plants.each do |plant| %>
-    <li> <%= link_to plant.name, user_garden_plant_path(user_id: @garden.user_id, garden_id: @garden.id, id: plant.id) %> </li>
+    <li> <%= link_to plant.name, user_garden_plant_path(user_id: @garden.user_id, garden_id: @garden.id, id: plant.id) %> 🌱 Planted on <%= plant.formatted_plant_date %> </li>
    <% end %>
 </ul>

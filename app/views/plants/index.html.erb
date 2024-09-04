@@ -1,5 +1,18 @@
 <h1>All Plants</h1>
 
+<%= form_with url: plants_path, method: :get, local: true do %>
+  <div>
+    <label>Sort by:</label><br>
+    <%= check_box_tag 'sort', 'edible', params[:sort] == 'edible' %>
+    <%= label_tag 'sort', 'Edible Plants' %><br>
+
+    <%= check_box_tag 'sort', 'pet_safe', params[:sort] == 'pet_safe' %>
+    <%= label_tag 'sort', 'Safe for Pets' %><br>
+
+    <%= submit_tag 'Sort' %>
+  </div>
+<% end %>
+
 <ul>
   <% @plants.each do |plant| %>
     <li><%= link_to plant.name, plant %></li>

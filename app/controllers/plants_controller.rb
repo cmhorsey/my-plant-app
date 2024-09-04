@@ -1,6 +1,11 @@
 class PlantsController < ApplicationController
   def index
     @plants = Plant.all
+    if params[:sort] == "edible"
+      @plants = @plants.edible_plants
+    elsif params[:sort] == "pet_safe"
+      @plants = @plants.safe_for_pets
+    end
   end
 
   def show
@@ -24,6 +29,6 @@ class PlantsController < ApplicationController
 private
 
   def plant_params
-    params.require(:plant).permit(:name, :scientific_name, :edible, :pet_safe)
+    params.require(:plant).permit(:name, :scientific_name, :edible, :pet_safe, :plant_type)
   end
 end
