@@ -3,6 +3,8 @@
 <h3>Plants you'll find here:</h3>
 <ul>
   <% @garden.garden_plants.each do |gardenplant| %>
-    <li><%= gardenplant.quantity %> <%= link_to gardenplant.plant.name, plant_path(gardenplant.plant)  %></li>
+    <li><%= gardenplant.quantity %> <%= link_to gardenplant.plant.name, plant_path(gardenplant.plant)  %>
+      <p> Last watered: <%= gardenplant.last_watered %> </p>
+    </li>
    <% end %>
 </ul>
