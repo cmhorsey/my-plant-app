@@ -10,6 +10,7 @@ GardenGuru is a web application that allows users to manage their gardens, explo
 - [Features](#features)
 - [Database Diagram](#database-diagram)
 - [Installation](#installation)
+- [Usage](#usage)
 - [RSpec Tests](#rspec-tests)
 
 ## Features
@@ -53,6 +54,10 @@ GardenGuru is a web application that allows users to manage their gardens, explo
     ```
 4. Start server
    `rails s`
+
+## Usage
+
+Once the application is set up, you can access it at `http://localhost:3000`.
 
 ## RSpec Tests
 
