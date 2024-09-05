@@ -6,4 +6,11 @@ RSpec.describe User do
 
     expect(gardendoodle.username).to eq('gardendoodle')
   end
+
+  describe 'Factory' do
+    it 'is creates a valid User' do
+      user = FactoryBot.build(:user)
+      expect(user).to be_valid
+    end
+  end
 end
