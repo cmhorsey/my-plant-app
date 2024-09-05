@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'homepage', to: 'home#homepage'
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :users do
-    resources :gardens do
+  resources :users, only: [:show] do
+    resources :gardens, only: [:show, :index, :new, :create] do
     end
   end
 end
