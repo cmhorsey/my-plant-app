@@ -1,7 +1,7 @@
 Tell us about the new garden bed!
 <%= form_with model: [current_user, @garden], local: true do |f| %>
 
-<%= render 'devise/shared/error_messages', object: @garden %>
+  <%= render 'devise/shared/error_messages', object: @garden %>
 
   <label>Garden Name: <%= f.text_field :name %></label><br />
 
