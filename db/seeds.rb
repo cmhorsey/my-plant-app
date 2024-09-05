@@ -1,10 +1,8 @@
-# # Clear existing data
 GardenPlant.delete_all
 Garden.delete_all
 User.delete_all
 Plant.delete_all
 
-# Create Users
 user1 = User.create!(
   email: "alice12@example.com",
   username: "alice",
@@ -17,7 +15,6 @@ user2 = User.create!(
   password: "password456"
 )
 
-# Create Gardens
 garden1 = Garden.create!(
   name: "Sunny Garden",
   location: "Backyard",
@@ -32,7 +29,6 @@ garden2 = Garden.create!(
   user_id: user2.id
 )
 
-# Create Plants
 plant1 = Plant.create!(
   name: "Tomato",
   scientific_name: "Solanum lycopersicum",
@@ -60,7 +56,6 @@ plant3 = Plant.create!(
   description: "A lush, green fern ideal for shaded areas."
 )
 
-# Create GardenPlants
 GardenPlant.create!(
   garden_id: garden1.id,
   plant_id: plant1.id,
