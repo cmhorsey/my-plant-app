@@ -53,3 +53,11 @@ body {
   background-color: #f5f0e1;
   font-family: "Playfair Display", serif;
 }
+
+.image-class {
+  width: 200px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  border-radius: 50%; /* Makes the image circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+  object-fit: cover; /* Ensures the image covers the circular area */
+}
