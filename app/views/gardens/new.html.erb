@@ -1,16 +1,7 @@
 Tell us about the new garden bed!
 <%= form_with model: [current_user, @garden], local: true do |f| %>
 
-  <% if @garden.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@garden.errors.count, "error") %> prohibited this garden from being saved:</h2>
-      <ul>
-        <% @garden.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render 'devise/shared/error_messages', object: @garden %>
 
   <label>Garden Name: <%= f.text_field :name %></label><br />
 
