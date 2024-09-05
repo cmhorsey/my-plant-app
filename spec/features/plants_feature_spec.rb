@@ -19,7 +19,7 @@ RSpec.feature "Create Plant", type: :feature do
   end
 
   def login
-    user = FactoryBot.create(:user)
+    user = create(:user)
 
     visit user_session_path
 
