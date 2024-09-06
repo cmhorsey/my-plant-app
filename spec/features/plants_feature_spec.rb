@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Create Plant", type: :feature do
-  scenario "creates a new instance of the plant model" do
+  it "creates a new instance of the plant model" do
     login
 
     visit new_plant_path

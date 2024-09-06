@@ -1,16 +1,8 @@
  Plant something!
 <%= form_with model: @garden_plant, local: true do |f| %>
 
-    <% if @garden_plant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@garden_plant.errors.count, "error") %> prohibited this plant from being planted:</h2>
-      <ul>
-        <% @garden_plant.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'devise/shared/error_messages', object: @garden_plant %>
+
 
   <label>Select Garden:</label>
   <%= f.select :garden_id, options_from_collection_for_select(@gardens, :id, :name), prompt: 'Choose a Garden' %><br />
