@@ -4,7 +4,7 @@ class GardenPlant < ApplicationRecord
 
   validates :quantity, numericality: { only_integer: true, greater_than: 0 }
 
-  def formatted_plant_date
-    created_at.strftime("%B %d, %Y")
-  end
+  # def formatted_plant_date
+  #   created_at.strftime("%B %d, %Y")
+  # end
 end
