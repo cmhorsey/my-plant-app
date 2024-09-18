@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :gardens, only: [:show, :index, :new, :create]
   end
 
-  resources :garden_plants, only: [:new, :create, :update]
+  resources :garden_plants, only: [:new, :create, :update, :destroy]
 
   resources :plants, only: [:show, :index, :new, :create]
 end

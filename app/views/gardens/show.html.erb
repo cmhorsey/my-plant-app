@@ -5,6 +5,7 @@
   <% @garden.garden_plants.each do |gardenplant| %>
     <li><%= gardenplant.quantity %> <%= link_to gardenplant.plant.name, plant_path(gardenplant.plant) %> Planted on: <i> <%= gardenplant.formatted_plant_date %>  </i>
       <p> Last watered: <%= gardenplant.last_watered %> <%= button_to 'Water plant 💦', garden_plant_path(gardenplant), method: :patch, class: 'button-8' %>
+      <%= button_to 'Remove Plant 🧤', garden_plant_path(gardenplant), method: :delete, class: 'button-8' %>
       </p>
     </li>
    <% end %>
