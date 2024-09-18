@@ -2,7 +2,7 @@
 
 <ul>
   <% garden.garden_plants.each do |gardenplant| %>
-    <li><%= gardenplant.quantity %> <%= link_to gardenplant.plant.name, plant_path(gardenplant.plant) %> Planted on: <i> <%= formatted_plant_date(gardenplant) %> </i>
+    <li><%= gardenplant.quantity %> <%= link_to gardenplant.plant.name, plant_path(gardenplant.plant) %> Planted on: <span> <%= formatted_plant_date(gardenplant) %> </span>
       <p>Last watered: <%= gardenplant.last_watered %> <%= button_to 'Water plant 💦', garden_plant_path(gardenplant), method: :patch, class: 'button-8' %></p>
     </li>
   <% end %>
