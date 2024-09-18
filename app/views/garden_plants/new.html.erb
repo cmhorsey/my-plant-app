@@ -3,7 +3,6 @@
 
   <%= render 'devise/shared/error_messages', object: @garden_plant %>
 
-
   <label>Select Garden:</label>
   <%= f.select :garden_id, options_from_collection_for_select(@gardens, :id, :name), prompt: 'Choose a Garden' %><br />
 

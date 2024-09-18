@@ -14,6 +14,18 @@ class GardenPlantsController < ApplicationController
     end
   end
 
+  def destroy
+    garden_plant = GardenPlant.find(params[:id])
+
+    if garden_plant
+      garden = garden_plant.garden
+      garden_plant.destroy!
+      redirect_to user_gardens_path(garden)
+    else
+      redirect_to user_gardens_path(current_user)
+    end
+  end
+
   def create
     @garden_plant = GardenPlant.new(garden_plant_params)
     @gardens = Garden.all
